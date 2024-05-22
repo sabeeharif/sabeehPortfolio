@@ -31,6 +31,7 @@ export const CaseStudy = ({ projectData }) => {
     setNewData(data?.data?.projects?.[id]);
   }, []);
 
+  console.log(projectData, "p");
 
   return (
     <div className=" w-full flex justify-start items-start flex-col  p-7 border-night-black bg-primaryDark rounded-xl mb-6">

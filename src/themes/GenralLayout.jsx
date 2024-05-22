@@ -2,15 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import {
   CaseStudy,
   DesktopNav,
+  MobileNav,
   ProfileIntroLeftSide,
 } from "../components";
 import { CenterContent } from "../pages";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useLocation } from "react-router-dom";
 import { useData } from "../DataContext";
 
 export const GeneralLayout = ({ projectData }) => {
   const [address, setAddress] = useState("");
-  // const { data } = useData();
+  const { data } = useData();
   const location = useLocation();
   // use theme from local storage if available or set light theme
   const [theme, setTheme] = useState(
@@ -18,13 +20,13 @@ export const GeneralLayout = ({ projectData }) => {
   );
 
   // update state on toggle
-  // const handleToggle = (e) => {
-  //   if (e.target.checked) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // };
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   // set theme state in localstorage on mount & also update localstorage on state change
   useEffect(() => {

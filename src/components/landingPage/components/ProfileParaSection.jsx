@@ -2,13 +2,14 @@ import React from "react";
 import { IoIosSend } from "react-icons/io";
 
 import { Features } from "./Features";
-import heroImage2 from "../../../assets/img/hero-img-2.png";
+import heroImage2 from "../../../assets/img/herow (1) 1.png";
 import { Carousel } from "./Carousel";
 import { Heading } from "../../genralComponents";
 import { useData } from "../../../DataContext";
 export const ProfileParaSection = () => {
   const { data } = useData();
   const baseURL = process.env.REACT_APP_URL;
+  console.log(data, "data2")
   const handleButtonClick = () => {
     const section = document.getElementById("contact");
     if (section) {
